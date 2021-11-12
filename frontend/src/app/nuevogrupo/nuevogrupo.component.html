@@ -1,0 +1,109 @@
+<div>
+    <h2>NUEVO GRUPO:</h2>
+    <form [formGroup]="grupoinvestigacionForm" (ngSubmit)="addgrupo()">
+        <p>
+          
+      Nombre del Grupo: <input type="string" placeholder="Nombre del Grupo" formControlName="nombregrupo" />*
+      <ng-container
+        *ngIf="!formControls.nombregrupo.valid &&formControls.nombregrupo.touched">
+        <p *ngIf="formControls.nombregrupo.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+    <p>
+      ID del grupo: <input type="string" placeholder="ID del grupo" formControlName="id" />*
+      <ng-container
+        *ngIf="!formControls.id.valid &&formControls.id.touched">
+        <p *ngIf="formControls.id.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+    <p>
+      Descripcion: <input type="string" placeholder="descripcion" formControlName="descripcion" />*
+      <ng-container
+        *ngIf="!formControls.descripcion.valid && formControls.descripcion.touched">
+        <p *ngIf="formControls.descripcion.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+  
+    <p>
+      Responsable: <input type="string" placeholder="Responsable" formControlName="responsable" />*
+      <ng-container
+        *ngIf="!formControls.responsable.valid &&formControls.responsable.touched">
+        <p *ngIf="formControls.responsable.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+    <p>
+      Url: <input type="string" placeholder="Url" formControlName="url" />*
+      <ng-container
+        *ngIf="!formControls.url.valid &&formControls.url.touched">
+        <p *ngIf="formControls.url.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+    <h2>INFORMACIÓN USUARIO:</h2>
+    <p>
+          Id Usuario: <input type="string" placeholder="idUser" formControlName="idUser" />*
+      <ng-container
+        *ngIf="!formControls.idUser.valid &&formControls.idUser.touched">
+        <p *ngIf="formControls.idUser.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+    <p>
+          Username: <input type="string" placeholder="username" formControlName="username" />*
+      <ng-container
+        *ngIf="!formControls.username.valid &&formControls.username.touched">
+        <p *ngIf="formControls.username.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+    <p>
+          Password: <input type="string" placeholder="password" formControlName="password" />*
+      <ng-container
+        *ngIf="!formControls.password.valid &&formControls.password.touched">
+        <p *ngIf="formControls.password.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+    <p>
+          Email: <input type="string" placeholder="email" formControlName="email" />*
+      <ng-container
+        *ngIf="!formControls.email.valid &&formControls.email.touched">
+        <p *ngIf="formControls.email.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+    <p>
+      Grupo: <input type="string" placeholder="grupo" formControlName="grupo" />*
+  <ng-container
+    *ngIf="!formControls.grupo.valid &&formControls.grupo.touched">
+    <p *ngIf="formControls.grupo.errors.required">
+      Este Campo es Obligatorio
+    </p>
+  </ng-container>
+</p>
+
+      <p>
+        <input type="submit" value="Añadir" [disabled]="grupoinvestigacionForm.invalid" />
+        <input type="submit" value="Atrás" (click) = "atras()" />
+      </p>
+    </form>
+  </div>
+  
