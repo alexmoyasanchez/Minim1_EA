@@ -1,7 +1,4 @@
 export interface Usuario {
-    idUser: String;
-    username: String;
-    password: String;
-    email: String;
-    grupo: String;
+    nombre: String;
+    telefono: String;
 }

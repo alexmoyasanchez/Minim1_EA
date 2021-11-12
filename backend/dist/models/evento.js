@@ -18,25 +18,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const usuario_1 = __importDefault(require("./usuario"));
-const barSchema = new mongoose_1.Schema({
-    idUser: {
-        type: String,
-        ref: usuario_1.default
-    },
-    name: {
+const eventoSchema = new mongoose_1.Schema({
+    nombreEvento: {
         type: String
     },
-    address: {
+    fecha: {
         type: String
     },
-    musicTaste: {
+    descripcion: {
         type: String
     }
 });
-exports.default = mongoose_1.default.model('Bar', barSchema);
+exports.default = mongoose_1.default.model('Estado', eventoSchema);

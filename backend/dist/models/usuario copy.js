@@ -20,22 +20,18 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-//model grupoinvestigación
-const grupoinvestigacionSchema = new mongoose_1.Schema({
-    nombregrupo: {
-        type: String
-    },
+const usuarioSchema = new mongoose_1.Schema({
     id: {
         type: String
     },
-    descripcion: {
+    username: {
         type: String
     },
-    responsable: {
+    password: {
         type: String
     },
-    url: {
+    email: {
         type: String
     }
 });
-exports.default = mongoose_1.default.model('GrupoInvestigacion', grupoinvestigacionSchema);
+exports.default = mongoose_1.default.model('Usuario', usuarioSchema);

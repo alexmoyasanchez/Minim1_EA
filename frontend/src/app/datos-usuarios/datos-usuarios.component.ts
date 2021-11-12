@@ -18,7 +18,7 @@ export class DatosUsuariosComponent implements OnInit {
   }
 
   modificar(){
-    this.router.navigate(['/modificarusuario/' + this.usuario.idUser]);
+    this.router.navigate(['/modificarusuario/' + this.usuario.nombre]);
   }
 
   atras(){

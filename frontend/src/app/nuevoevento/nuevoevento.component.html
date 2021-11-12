@@ -1,0 +1,63 @@
+<div>
+    <h2>NUEVO EVENTO:</h2>
+    <form [formGroup]="eventoForm" (ngSubmit)="addevento()">
+        <p>
+          
+      Nombre del Evento: <input type="string" placeholder="Nombre del Evento" formControlName="nombreEvento" />*
+      <ng-container
+        *ngIf="!formControls.nombreEvento.valid &&formControls.nombreEvento.touched">
+        <p *ngIf="formControls.nombreEvento.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+    <p>
+      Fecha del evento: <input type="string" placeholder="Fecha del evento" formControlName="fecha" />*
+      <ng-container
+        *ngIf="!formControls.fecha.valid &&formControls.fecha.touched">
+        <p *ngIf="formControls.fecha.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+    <p>
+      Descripcion: <input type="string" placeholder="descripcion" formControlName="descripcion" />*
+      <ng-container
+        *ngIf="!formControls.descripcion.valid && formControls.descripcion.touched">
+        <p *ngIf="formControls.descripcion.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+  
+    <h2>INFORMACIÓN PERSONA:</h2>
+    <p>
+          Nombre Usuario: <input type="string" placeholder="nombre" formControlName="nombre" />*
+      <ng-container
+        *ngIf="!formControls.nombre.valid &&formControls.nombre.touched">
+        <p *ngIf="formControls.nombre.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+    <p>
+          Telefono: <input type="string" placeholder="telefono" formControlName="telefono" />*
+      <ng-container
+        *ngIf="!formControls.telefono.valid &&formControls.telefono.touched">
+        <p *ngIf="formControls.telefono.errors.required">
+          Este Campo es Obligatorio
+        </p>
+      </ng-container>
+    </p>
+
+
+      <p>
+        <input type="submit" value="Añadir" [disabled]="eventoForm.invalid" />
+        <input type="submit" value="Atrás" (click) = "atras()" />
+      </p>
+    </form>
+  </div>
+  

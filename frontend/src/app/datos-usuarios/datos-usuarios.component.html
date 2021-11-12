@@ -1,23 +1,12 @@
 <div class="datos-usuarios" *ngIf="usuario">
     <p>
-        ID usuario: {{usuario.idUser}}
+        Nombre {{usuario.nombre}}
     </p>
 
     <p>
-        Username: {{usuario.username}}
+        Telefono: {{usuario.telefono}}
     </p>
 
-    <p>
-        Password: {{usuario.password}}
-    </p>
-
-    <p>
-        Email: {{usuario.email}}
-    </p>
-
-    <p>
-        Grupo: {{usuario.grupo}}
-    </p>
 
 
     <button (click) = "modificar()">

@@ -15,11 +15,8 @@ export class NuevousuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioForm = this.formBuilder.group({
-      id: ['', [Validators.required, Validators.nullValidator]],
-      username: ['', [Validators.required, Validators.nullValidator]],
-      password: ['', [Validators.required, Validators.nullValidator]],
-      email: ['', [Validators.required, Validators.nullValidator]],
-      grupo: ['', [Validators.required, Validators.nullValidator]]
+      nombre: ['', [Validators.required, Validators.nullValidator]],
+      telefono: ['', [Validators.required, Validators.nullValidator]]
     });
   }
 
@@ -31,16 +28,10 @@ export class NuevousuarioComponent implements OnInit {
     if(this.usuarioForm.invalid){
       return;
     }
-    const id = this.usuarioForm.value.id;
-    const username = this.usuarioForm.value.username;
-    const password = this.usuarioForm.value.password;
-    const email = this.usuarioForm.value.email;
-    const grupo = this.usuarioForm.value.grupo;
+    const nombre = this.usuarioForm.value.nombre;
+    const telefono = this.usuarioForm.value.telefono;
 
-    console.log(email);
-
-
-    const usuario = {'idUser': id, 'username': username, 'password': password, 'email': email, 'grupo': grupo};
+    const usuario = {'nombre': nombre, 'telefono': telefono};
     this.usuarioService.addUsuario(usuario).subscribe(data =>{
       this.router.navigateByUrl('/principal');
     })

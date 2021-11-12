@@ -4,58 +4,26 @@
     
 
     <p>
-        ID usuario: <input type="string" placeholder="ID usuario" formControlName="id" />*
+        Nombre: <input type="string" placeholder="Nombre" formControlName="nombre" />*
         <ng-container
-          *ngIf="!formControls.id.valid && formControls.id.touched">
-          <p *ngIf="formControls.id.errors.required">
+          *ngIf="!formControls.nombre.valid && formControls.nombre.touched">
+          <p *ngIf="formControls.nombre.errors.required">
             Este Campo es Obligatorio
           </p>
         </ng-container>
       </p>
   
       <p>
-        Username: <input type="string" placeholder="Username" formControlName="username" />*
+        Telefono: <input type="string" placeholder="Telefono" formControlName="telefono" />*
         <ng-container
-          *ngIf="!formControls.descripcion.valid && formControls.descripcion.touched">
-          <p *ngIf="formControls.descripcion.errors.required">
+          *ngIf="!formControls.telefono.valid && formControls.telefono.touched">
+          <p *ngIf="formControls.telefono.errors.required">
             Este Campo es Obligatorio
           </p>
         </ng-container>
       </p>
     
       <p>
-        Password: <input type="string" placeholder="Password" formControlName="password" />*
-        <ng-container
-          *ngIf="!formControls.responsable.valid && formControls.responsable.touched">
-          <p *ngIf="formControls.responsable.errors.required">
-            Este Campo es Obligatorio
-          </p>
-        </ng-container>
-      </p>
-  
-      <p>
-        Email: <input type="string" placeholder="email" formControlName="email" />*
-        <ng-container
-          *ngIf="!formControls.email.valid && formControls.email.touched">
-          <p *ngIf="formControls.email.errors.required">
-            Este Campo es Obligatorio
-          </p>
-        </ng-container>
-      </p>
-  
-      <p>
-        Grupo: <input type="string" placeholder="grupo" formControlName="grupo" />*
-        <ng-container
-          *ngIf="!formControls.grupo.valid && formControls.grupo.touched">
-          <p *ngIf="formControls.grupo.errors.required">
-            Este Campo es Obligatorio
-          </p>
-        </ng-container>
-      </p>
-      
-
-      <p>
-        <input type="submit" value="Eliminar" (click) = "deleteUsuario()" />
         <input type="submit" value="Modificar" [disabled]="usuarioForm.invalid" />
         <input type="submit" value="Atrás" (click) = "atras()" />
       </p>

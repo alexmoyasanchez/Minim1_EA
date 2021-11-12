@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './principal/principal.component';
-import { DatosGruposinvestigacionComponent } from './datos-gruposinvestigacion/datos-gruposinvestigacion.component';
-import { NuevogrupoComponent } from './nuevogrupo/nuevogrupo.component';
+import { DatosEventosComponent } from './datos-eventos/datos-eventos.component';
+import { NuevoeventoComponent } from './nuevoevento/nuevoevento';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModificarComponent } from './modificar/modificar.component';
 import { NuevousuarioComponent } from './nuevousuario/nuevousuario.component';
@@ -19,8 +19,8 @@ import { DetalleComponent } from './detalle/detalle.component';
   declarations: [
     AppComponent,
     PrincipalComponent,
-    DatosGruposinvestigacionComponent,
-    NuevogrupoComponent,
+    DatosEventosComponent,
+    NuevoeventoComponent,
     ModificarComponent,
     NuevousuarioComponent,
     ModificarUsuarioComponent,

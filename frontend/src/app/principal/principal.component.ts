@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../models/Usuario';
-import { GrupoinvestigacionService } from '../services/grupoinvestigacion.service';
+import { EventoService } from '../services/evento.service';
 import { UsuarioService } from '../services/usuario.service';
-import { GrupoInvestigacion } from '../models/grupoinvestigacion';
+import { Evento } from '../models/evento';
 
 @Component({
   selector: 'app-principal',
@@ -13,31 +13,25 @@ import { GrupoInvestigacion } from '../models/grupoinvestigacion';
 export class PrincipalComponent implements OnInit {
 
 
-  grupos: GrupoInvestigacion[];
+  eventos: Evento[];
   usuarios : Usuario[];
 
-  constructor(private router: Router, private grupoService : GrupoinvestigacionService, private usuarioService : UsuarioService) { }
+  constructor(private router: Router, private eventoService : EventoService, private usuarioService : UsuarioService) { }
 
   ngOnInit(): void {
 
-    this.grupoService.getGrupos().subscribe(data =>{
-      this.grupos = data;
-      console.log(this.grupos);
+    this.eventoService.getEventos().subscribe(data =>{
+      this.eventos = data;
+      console.log(this.eventos);
     })
 
-    this.usuarioService.getUsuarios().subscribe(data =>{
-      this.usuarios = data;
-      console.log(this.usuarios);
-    })
+    
   }
   
 
-  nuevoGrupo(){
-    this.router.navigateByUrl('/nuevogrupo');
+  nuevoEvento(){
+    this.router.navigateByUrl('/nuevoevento');
   }
 
-  nuevoUsuario(){
-    this.router.navigateByUrl('/nuevousuario');
-  }
 
 }

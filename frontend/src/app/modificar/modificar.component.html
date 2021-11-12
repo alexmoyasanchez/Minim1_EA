@@ -1,22 +1,22 @@
 <div>
-    <h2>MODIFICAR UN GRUPO DE INVESTIGACIÓN:</h2>
-    <form [formGroup]="grupoinvestigacionForm" (ngSubmit)="modificargrupo()">
+    <h2>MODIFICAR UN EVENTO:</h2>
+    <form [formGroup]="eventoForm" (ngSubmit)="modificarevento()">
         <p>
         
-      Nombre del Grupo: <input type="string" placeholder="Nombre del Grupo" formControlName="nombregrupo" />*
+      Nombre del Evento: <input type="string" placeholder="Nombre del Evento" formControlName="nombreEvento" />*
       <ng-container
-        *ngIf="!formControls.nombregrupo.valid &&formControls.nombregrupo.touched">
-        <p *ngIf="formControls.nombregrupo.errors.required">
+        *ngIf="!formControls.nombreEvento.valid &&formControls.nombreEvento.touched">
+        <p *ngIf="formControls.nombreEvento.errors.required">
           Este Campo es Obligatorio
         </p>
       </ng-container>
     </p>
 
     <p>
-      ID del grupo: <input type="string" placeholder="ID del grupo" formControlName="id" />*
+      Fecha: <input type="string" placeholder="Fecha" formControlName="fecha" />*
       <ng-container
-        *ngIf="!formControls.id.valid &&formControls.id.touched">
-        <p *ngIf="formControls.id.errors.required">
+        *ngIf="!formControls.fecha.valid &&formControls.fecha.touched">
+        <p *ngIf="formControls.fecha.errors.required">
           Este Campo es Obligatorio
         </p>
       </ng-container>
@@ -32,31 +32,10 @@
       </ng-container>
     </p>
   
-    <p>
-      Responsable: <input type="string" placeholder="Responsable" formControlName="responsable" />*
-      <ng-container
-        *ngIf="!formControls.responsable.valid &&formControls.responsable.touched">
-        <p *ngIf="formControls.responsable.errors.required">
-          Este Campo es Obligatorio
-        </p>
-      </ng-container>
-    </p>
-
-    <p>
-      Url: <input type="string" placeholder="Url" formControlName="url" />*
-      <ng-container
-        *ngIf="!formControls.url.valid &&formControls.url.touched">
-        <p *ngIf="formControls.url.errors.required">
-          Este Campo es Obligatorio
-        </p>
-      </ng-container>
-    </p>
 
       <p>
-        <input type="submit" value="Eliminar" (click) = "delete()" />
-        <input type="submit" value="Modificar" [disabled]="grupoinvestigacionForm.invalid" />
+        <input type="submit" value="Modificar" [disabled]="eventoForm.invalid" />
         <input type="submit" value="Atrás" (click) = "atras()" />
-        <input type="submit" value="Detalle" (click) = "detalle()" />
       </p>
     </form>
   </div>

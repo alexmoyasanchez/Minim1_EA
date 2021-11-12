@@ -23,11 +23,8 @@ export class ModificarUsuarioComponent implements OnInit {
     this.usuarioService.getUsuario(this.id).subscribe(data =>{
       this.usuario = data;
       this.usuarioForm = this.formBuilder.group({
-        id: [this.usuario.idUser, [Validators.required, Validators.nullValidator]],
-        username: [this.usuario.username, [Validators.required, Validators.nullValidator]],
-        password: [this.usuario.password, [Validators.required, Validators.nullValidator]],
-        email: [this.usuario.email, [Validators.required, Validators.nullValidator]],
-        grupo: [this.usuario.grupo, [Validators.required, Validators.nullValidator]]
+        nombre: [this.usuario.nombre, [Validators.required, Validators.nullValidator]],
+        telefono: [this.usuario.telefono, [Validators.required, Validators.nullValidator]]
       });
     })
   }
@@ -44,25 +41,15 @@ export class ModificarUsuarioComponent implements OnInit {
     if(this.usuarioForm.invalid){
       return;
     }
-    const id = this.usuarioForm.value.id;
-    const username = this.usuarioForm.value.username;
-    const password = this.usuarioForm.value.password;
-    const email = this.usuarioForm.value.email;
-    const grupo = this.usuarioForm.value.grupo;
+    const nombre = this.usuarioForm.value.nombre;
+    const telefono = this.usuarioForm.value.telefono;
 
 
-    const usuariomodificado = {'idUser': id, 'username': username, 'password': password, 'email': email, 'grupo': grupo};
+    const usuariomodificado = {'nombre': nombre, 'telefono': telefono};
     this.usuarioService.modificarUsuario(usuariomodificado, this.route.snapshot.paramMap.get('id')).subscribe(data => {
       this.router.navigateByUrl('/principal');
     })
   }
 
-  deleteUsuario(){
-    const id = this.usuarioForm.value.id;
-    console.log(id);
-    this.usuarioService.eliminarUsuario(id).subscribe(data =>{
-      this.router.navigateByUrl('/principal');
-    });
-  }
 
 }
